@@ -16,19 +16,19 @@ OS X/Linux
    it GA1
 * In your IDE sketchbook location, create a directory called GA1
 
-    `$ mkdir \<path-to-sketchbook-location\>/GA1`
+    `$ mkdir <path-to-sketchbook-location>/GA1`
 
 * Copy everything from this directory to that directory
 
-    `$ cp \<path-to-this-directory\>/* \<path-to-sketchbook-location\>/GA1`
+    `$ cp <path-to-this-directory>/* <path-to-sketchbook-location>/GA1`
 
 * Change directory to the newly created directory
 
-    `$ cd \<path-to-sketchbook-location\>/GA`
+    `$ cd <path-to-sketchbook-location>/GA`
 
 * Generate the needed files by invoking the tool to create them:
 
-    `$ \<path-to-golgi-pkg\>/LATEST/Arduino/golgen.sh \<developer-key-from-portal\> \<application-key-from-portal\> \<path-to-root-GA1-directory-from-GitHub\>/GA1.thrift GolgiGen`
+    `$ <path-to-golgi-pkg>/LATEST/Arduino/golgen.sh <developer-key-from-portal> <application-key-from-portal> <path-to-root-GA1-directory-from-GitHub>/GA1.thrift GolgiGen`
 
 * Import the Golgi Ethernet library into the IDE by going to Sketch/Include Library/Add .ZIP Library, navigate to the Golgi-Pkg install directory, select LATEST/Arduino and pick the Ethernet library.
 * Add the SPI library and the Ethernet library from the Sketch/Include Library menu dropdown.
