@@ -28,7 +28,7 @@ OS X/Linux
 
 * Generate the needed files by invoking the tool to create them:
 
-    $ <path-to-golgi-pkg>/LATEST/Arduino/golgen.sh <developer-key-from-portal> <application-key-from-portal> <path-to-root-GA1-directory-from-GitHub>/GA1.thrift GolgiGen
+    $ &ltpath-to-golgi-pkg&gt/LATEST/Arduino/golgen.sh &ltdeveloper-key-from-portal&gt &ltapplication-key-from-portal&gt &ltpath-to-root-GA1-directory-from-GitHub&gt/GA1.thrift GolgiGen
 
 * Import the Golgi Ethernet library into the IDE by going to Sketch/Include Library/Add .ZIP Library, navigate to the Golgi-Pkg install directory, select LATEST/Arduino and pick the Ethernet library.
 * Add the SPI library and the Ethernet library from the Sketch/Include Library menu dropdown.
