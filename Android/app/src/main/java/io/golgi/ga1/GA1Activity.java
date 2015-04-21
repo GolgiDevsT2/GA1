@@ -29,7 +29,6 @@ public class GA1Activity extends ActionBarActivity {
 
 
     public void register() {
-        GolgiAPI.setOption("USE_TEST_SERVER", "1");
         GolgiAPI.getInstance().register(
                 GolgiKeys.DEV_KEY,
                 GolgiKeys.APP_KEY,
