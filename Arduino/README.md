@@ -35,4 +35,4 @@ OS X/Linux
 * Build the sketch, install it, start it.
   
 Windows
-  o [COMING SOON]
+* [COMING SOON]

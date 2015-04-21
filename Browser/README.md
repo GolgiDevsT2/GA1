@@ -9,4 +9,4 @@ To build the browser code on OS X and Linux:
 * Click on the bulb image to turn the LED on and off on the board.
   
 Windows
-  o [COMING SOON]
+* [COMING SOON]
