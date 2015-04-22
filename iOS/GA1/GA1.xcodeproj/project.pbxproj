@@ -14,6 +14,10 @@
 		D3AC0D161AE6A6D500CE3FED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3AC0D151AE6A6D500CE3FED /* Images.xcassets */; };
 		D3AC0D191AE6A6D500CE3FED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AC0D171AE6A6D500CE3FED /* LaunchScreen.xib */; };
 		D3AC0D251AE6A6D500CE3FED /* GA1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AC0D241AE6A6D500CE3FED /* GA1Tests.m */; };
+		D3AC0D301AE6A8EC00CE3FED /* bulb-off.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3AC0D2E1AE6A8EC00CE3FED /* bulb-off.jpg */; };
+		D3AC0D311AE6A8EC00CE3FED /* bulb-on.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3AC0D2F1AE6A8EC00CE3FED /* bulb-on.jpg */; };
+		D3AC0D351AE6B02F00CE3FED /* GA1SvcWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AC0D341AE6B02F00CE3FED /* GA1SvcWrapper.m */; };
+		D3AC0D381AE6B12200CE3FED /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AC0D371AE6B12200CE3FED /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,12 @@
 		D3AC0D1E1AE6A6D500CE3FED /* GA1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GA1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AC0D231AE6A6D500CE3FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3AC0D241AE6A6D500CE3FED /* GA1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GA1Tests.m; sourceTree = "<group>"; };
+		D3AC0D2E1AE6A8EC00CE3FED /* bulb-off.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bulb-off.jpg"; sourceTree = "<group>"; };
+		D3AC0D2F1AE6A8EC00CE3FED /* bulb-on.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bulb-on.jpg"; sourceTree = "<group>"; };
+		D3AC0D331AE6B02F00CE3FED /* GA1SvcWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GA1SvcWrapper.h; sourceTree = "<group>"; };
+		D3AC0D341AE6B02F00CE3FED /* GA1SvcWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GA1SvcWrapper.m; sourceTree = "<group>"; };
+		D3AC0D361AE6B09900CE3FED /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D3AC0D371AE6B12200CE3FED /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AC0D381AE6B12200CE3FED /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +74,8 @@
 		D3AC0CFC1AE6A6D500CE3FED = {
 			isa = PBXGroup;
 			children = (
+				D3AC0D371AE6B12200CE3FED /* libsqlite3.dylib */,
+				D3AC0D361AE6B09900CE3FED /* Config.xcconfig */,
 				D3AC0D071AE6A6D500CE3FED /* GA1 */,
 				D3AC0D211AE6A6D500CE3FED /* GA1Tests */,
 				D3AC0D061AE6A6D500CE3FED /* Products */,
@@ -81,6 +94,8 @@
 		D3AC0D071AE6A6D500CE3FED /* GA1 */ = {
 			isa = PBXGroup;
 			children = (
+				D3AC0D2E1AE6A8EC00CE3FED /* bulb-off.jpg */,
+				D3AC0D2F1AE6A8EC00CE3FED /* bulb-on.jpg */,
 				D3AC0D0C1AE6A6D500CE3FED /* AppDelegate.h */,
 				D3AC0D0D1AE6A6D500CE3FED /* AppDelegate.m */,
 				D3AC0D0F1AE6A6D500CE3FED /* ViewController.h */,
@@ -89,6 +104,8 @@
 				D3AC0D151AE6A6D500CE3FED /* Images.xcassets */,
 				D3AC0D171AE6A6D500CE3FED /* LaunchScreen.xib */,
 				D3AC0D081AE6A6D500CE3FED /* Supporting Files */,
+				D3AC0D331AE6B02F00CE3FED /* GA1SvcWrapper.h */,
+				D3AC0D341AE6B02F00CE3FED /* GA1SvcWrapper.m */,
 			);
 			path = GA1;
 			sourceTree = "<group>";
@@ -126,6 +143,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AC0D281AE6A6D500CE3FED /* Build configuration list for PBXNativeTarget "GA1" */;
 			buildPhases = (
+				D3AC0D321AE6AFEF00CE3FED /* ShellScript */,
 				D3AC0D011AE6A6D500CE3FED /* Sources */,
 				D3AC0D021AE6A6D500CE3FED /* Frameworks */,
 				D3AC0D031AE6A6D500CE3FED /* Resources */,
@@ -199,6 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AC0D311AE6A8EC00CE3FED /* bulb-on.jpg in Resources */,
+				D3AC0D301AE6A8EC00CE3FED /* bulb-off.jpg in Resources */,
 				D3AC0D141AE6A6D500CE3FED /* Main.storyboard in Resources */,
 				D3AC0D191AE6A6D500CE3FED /* LaunchScreen.xib in Resources */,
 				D3AC0D161AE6A6D500CE3FED /* Images.xcassets in Resources */,
@@ -214,11 +234,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D3AC0D321AE6AFEF00CE3FED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n# GOLGI_WORK_DIR: Where the golgi_gen script will copied to run\n# GOLGI_PKG_DIR: The Golgi Package install directory\n# GOLGI_LIB_DIR: Where the Golgi runtime libraries whould be put\n#\n\nGOLGI_WORK_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\nGOLGI_PKG_DIR=\"$HOME/Golgi-Pkg/LATEST\"\nGOLGI_HDR_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\nGOLGI_LIB_DIR=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n#\n# Copy Thrift file(s) into place (if necessary)\n#\n\ncp -f \"$PROJECT_DIR/../../GA1.thrift\" \"$GOLGI_WORK_DIR\"\n\n#\n# Create the GOLGI_KEYS.h file containing\n# the Developer key and the application key\n#\n\nDEVKEY=`cat \"$PROJECT_DIR/../../Golgi.DevKey\"`\nAPPKEY=`cat \"$PROJECT_DIR/../../Golgi.AppKey\"`\necho \"#define GOLGI_DEV_KEY @\\\"$DEVKEY\\\"\" >\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\necho \"#define GOLGI_APP_KEY @\\\"$APPKEY\\\"\" >>\"$GOLGI_WORK_DIR/GOLGI_KEYS.h\"\n\n\n. \"$GOLGI_PKG_DIR/iOS/golgi_gen.sh\"\n\n#\n# Remove the thrift file because the canonical source is elsewhere\n#\n\nrm -f \"$GOLGI_WORK_DIR/GA1.thrift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3AC0D011AE6A6D500CE3FED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AC0D351AE6B02F00CE3FED /* GA1SvcWrapper.m in Sources */,
 				D3AC0D111AE6A6D500CE3FED /* ViewController.m in Sources */,
 				D3AC0D0E1AE6A6D500CE3FED /* AppDelegate.m in Sources */,
 				D3AC0D0B1AE6A6D500CE3FED /* main.m in Sources */,
@@ -265,6 +302,7 @@
 /* Begin XCBuildConfiguration section */
 		D3AC0D261AE6A6D500CE3FED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3AC0D361AE6B09900CE3FED /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -308,6 +346,7 @@
 		};
 		D3AC0D271AE6A6D500CE3FED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3AC0D361AE6B09900CE3FED /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -347,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = GA1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = GA1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
