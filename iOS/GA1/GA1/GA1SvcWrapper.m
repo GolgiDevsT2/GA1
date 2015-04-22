@@ -7,6 +7,7 @@
 //
 
 #import "GA1SvcWrapper.h"
+#import "GA1SvcGen.m"
 
 @implementation GA1SvcWrapper
 

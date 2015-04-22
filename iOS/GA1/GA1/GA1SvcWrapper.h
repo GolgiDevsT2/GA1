@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GA1SvcGen.h"
+
 
 @interface GA1SvcWrapper : NSObject
 
