@@ -19,8 +19,8 @@ static GolgiNetInterface *netIf = NULL;
 #ifndef __WIFI_PARAMS_H__
 #define __WIFI_PARAMS_H__
 
-#define WIFI_SSID "YOUR-WIFI-SSID";     //  your network SSID (name)
-#define WIFI_PASS "YOUR-WIFI-PASSWORD"; // your network password
+#define WIFI_SSID "YOUR-WIFI-SSID"     //  your network SSID (name)
+#define WIFI_PASS "YOUR-WIFI-PASSWORD"  // your network password
 
 #endif
 */
