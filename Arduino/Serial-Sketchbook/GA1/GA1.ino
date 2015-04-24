@@ -7,6 +7,40 @@
 static GolgiAPIImpl *golgiAPIImpl;
 static GolgiNetInterface *netIf = NULL;
 
+/**************************************************/
+//
+// Serial Initialisation
+// 
+
+class SerialIF : public GolgiSerialInterface
+{
+public:
+    void begin(void){
+        pinMode(19, INPUT_PULLUP);
+        Serial1.begin(38400);
+    };
+
+    int available(void){
+        return Serial1.available();
+    };
+
+    void write(const uint8_t *data, int len){
+        Serial1.write(data, len);
+    };
+
+    int readBytes(char *buf, int max){
+        return Serial1.readBytes(buf, max);
+    };
+
+};
+
+
+GolgiNetInterface *setupNetwork(){
+    return new GolgiNetSerial(new SerialIF());
+}
+
+/**************************************************/
+
 
 void memReport(void)
 {
@@ -42,27 +76,6 @@ public:
     };
 };
 
-class SerialIF : public GolgiSerialInterface
-{
-public:
-    void begin(void){
-        pinMode(19, INPUT_PULLUP);
-        Serial1.begin(38400);
-    };
-
-    int available(void){
-        return Serial1.available();
-    };
-
-    void write(const uint8_t *data, int len){
-        Serial1.write(data, len);
-    };
-
-    int readBytes(char *buf, int max){
-        return Serial1.readBytes(buf, max);
-    };
-
-};
 
 
 void setup() {
@@ -71,7 +84,7 @@ void setup() {
     Serial.println(F("***** GA1 *****"));
     Serial.println(F("***************"));
     
-    netIf = new GolgiNetSerial(new SerialIF());
+    netIf = setupNetwork();
 
     golgiAPIImpl = new GolgiAPIImpl(netIf,
                                     GOLGI_APPKEY,

@@ -1,10 +1,3 @@
-#include <SPI.h>
-
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <WiFiServer.h>
-#include <WiFiUdp.h>
-
 #include <Arduino.h>
 #include <libgolgi.h>
 #include "GolgiGen.h"
@@ -13,6 +6,57 @@
 
 static GolgiAPIImpl *golgiAPIImpl;
 static GolgiNetInterface *netIf = NULL;
+
+
+/**************************************************/
+//
+// WiFi Initialisation
+// 
+
+/*
+ * Create a file called WIFI-PARAMS.h that looks like this:
+
+#ifndef __WIFI_PARAMS_H__
+#define __WIFI_PARAMS_H__
+
+#define WIFI_SSID "YOUR-WIFI-SSID";     //  your network SSID (name)
+#define WIFI_PASS "YOUR-WIFI-PASSWORD"; // your network password
+
+#endif
+*/
+
+#include "WIFI-PARAMS.h"
+
+#if !defined(WIFI_SSID)
+#error no WIFI SSID and PASSWORD defined
+#endif
+
+GolgiNetInterface *setupNetwork(){
+    Serial.print("Waiting for WiFi shield to spin up:");
+    for(int i = 0; i < 5; i++){
+        Serial.print(".");
+        delay(1000);
+    }
+    Serial.println("DONE");
+    Serial.println("Firmware Version: " + String(WiFi.firmwareVersion()));
+
+    Serial.println("Attempting to connect to WPA network: ");
+
+    int wifiStatus = WL_IDLE_STATUS;
+    wifiStatus = WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+    // if you're not connected, stop here:
+
+    if ( wifiStatus != WL_CONNECTED) {
+      Serial.println(String("Couldn't get a wifi connection ") + String(wifiStatus)) ;
+      while(true);
+    }
+
+    return new GolgiNetWifi();
+}
+
+/**************************************************/
+
 
 void memReport(void)
 {
@@ -55,27 +99,8 @@ void setup() {
     Serial.println("***** GA1 *****");
     Serial.println("***************");
 
-    Serial.print("Waiting for WiFi shield to spin up:");
-    for(int i = 0; i < 5; i++){
-        Serial.print(".");
-        delay(1000);
-    }
-    Serial.println("DONE");
-    Serial.println("Firmware Version: " + String(WiFi.firmwareVersion()));
 
-    Serial.println("Attempting to connect to WPA network: ");
-
-    int wifiStatus = WL_IDLE_STATUS;
-    wifiStatus = WiFi.begin("NostromoCam", "d0gb3rt08");
-
-    // if you're not connected, stop here:
-
-    if ( wifiStatus != WL_CONNECTED) {
-      Serial.println(String("Couldn't get a wifi connection ") + String(wifiStatus)) ;
-      while(true);
-    }
-
-    netIf = new GolgiNetWifi();
+    netIf = setupNetwork();
 
     golgiAPIImpl = new GolgiAPIImpl(netIf,
                                     GOLGI_APPKEY,
