@@ -17,7 +17,7 @@ class SerialIF : public GolgiSerialInterface
 public:
     void begin(void){
         pinMode(19, INPUT_PULLUP);
-        Serial1.begin(38400);
+        Serial1.begin(9600);
     };
 
     int available(void){
