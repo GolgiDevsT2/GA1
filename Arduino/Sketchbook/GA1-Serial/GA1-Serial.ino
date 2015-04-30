@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <libgolgi.h>
+#include "libgolgi.h"
 #include "GolgiGen.h"
 
 #include "GOLGI_KEYS.h"
