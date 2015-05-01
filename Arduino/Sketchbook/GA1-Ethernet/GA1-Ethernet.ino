@@ -1,3 +1,12 @@
+#include <SPI.h>
+
+#include <Dhcp.h>
+#include <Dns.h>
+#include <Ethernet.h>
+#include <EthernetClient.h>
+#include <EthernetServer.h>
+#include <EthernetUdp.h>
+
 #include <Arduino.h>
 #include "libgolgi.h"
 #include "GolgiGen.h"
