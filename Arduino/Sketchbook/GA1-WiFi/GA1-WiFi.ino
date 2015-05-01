@@ -1,3 +1,10 @@
+#include <SPI.h>
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiServer.h>
+#include <WiFiUdp.h>
+
 #include <Arduino.h>
 #include "libgolgi.h"
 #include "GolgiGen.h"
