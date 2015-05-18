@@ -20,15 +20,15 @@ public:
         Serial1.begin(9600);
     };
 
-    int available(void){
+    int32_t available(void){
         return Serial1.available();
     };
 
-    void write(const uint8_t *data, int len){
+    void write(const uint8_t *data, int32_t len){
         Serial1.write(data, len);
     };
 
-    int readBytes(char *buf, int max){
+    int32_t readBytes(char *buf, int32_t max){
         return Serial1.readBytes(buf, max);
     };
 
